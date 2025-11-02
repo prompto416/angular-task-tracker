@@ -1,12 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { Component, Input, OnInit } from '@angular/core';
 import { Task } from '../../Task'
+import { NgStyle } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 @Component({
   selector: 'app-task-item',
-  imports: [],
+  imports: [NgStyle, FontAwesomeModule],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.css'
 })
-export class TaskItemComponent {
+export class TaskItemComponent implements OnInit {
   @Input() task: Task
+  faTimes = faTimes;
 
+  constructor() {
+
+  }
+
+  ngOnInit(): void {
+
+  }
 }
